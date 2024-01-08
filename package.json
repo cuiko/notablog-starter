@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "preview": "http-server",
+    "generate": "rm -rf cache && notablog generate .",
+    "publish": "cd public && git add . && git commit && git push"
+  }
+}
