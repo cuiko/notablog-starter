@@ -1,7 +1,11 @@
 {
   "scripts": {
     "preview": "http-server",
-    "generate": "rm -rf cache && notablog generate .",
+    "generate": "notablog generate .",
+    "clean": "npm run clean:cache && npm run clean:output",
+    "clean:cache": "rm -rf cache",
+    "clean:output": "find public -not -path 'public/.git/*' -not -name '.git' -delete",
+    "generate:clean": "npm run clean && notablog generate .",
     "publish": "cd public && git add . && git commit && git push"
   }
 }
